@@ -1,8 +1,10 @@
 <!doctype html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="layout-compact layout-menu-fixed" dir="ltr" data-skin="default" data-bs-theme="light" data-assets-path="{{ asset('assets/') }}" data-template="vertical-menu-template-no-customizer-starter">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+    class=" layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-skin="default" data-bs-theme="light"
+    data-assets-path="{{ asset('../assets/') }}" data-template="vertical-menu-template">
 
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
@@ -35,7 +37,7 @@
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-                    <div class="flex-grow-1 container-p-y container-fluid">
+                    <div class="container-xxl flex-grow-1 container-p-y">
                         {{ $slot }}
                     </div>
                     <!-- / Content -->
@@ -66,8 +68,7 @@
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
     @yield('js')
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/mine/script.js') }}"></script>
+    @stack('js-stack')
     @livewireScripts
-    @stack('js-push')
 </body>
-
-</html>
