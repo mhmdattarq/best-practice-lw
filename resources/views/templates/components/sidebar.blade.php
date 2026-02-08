@@ -13,11 +13,12 @@ new class extends Component {
             <a href="index.html" class="app-brand-link">
                 <span class="app-brand-logo demo">
                     <span class="text-primary">
-                        <img src="../assets/img/altekno.png" alt="altekno" width="32" height="22"
-                            viewBox="0 0 32 22" fill="none">
+                        <img src="{{ asset('assets/img/icons/medina-no-bg.png') }}" alt="medina" style="height: 70px;">
                     </span>
                 </span>
-                <span class="app-brand-text demo menu-text fw-bold ms-3">ALTEKNO</span>
+                <span class="app-brand-text demo menu-text fw-bold ms-2" style="font-size:17px;">Admin
+                    <span style="color:#0249b4;">Master</span>
+                </span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -33,7 +34,7 @@ new class extends Component {
             <li class="menu-header small">
                 <span class="menu-header-text">Home</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}" class="menu-link">
                     <i class="menu-icon icon-base ti tabler-smart-home"></i>
                     <div>Dashboard</div>
@@ -42,12 +43,23 @@ new class extends Component {
             <li class="menu-header small">
                 <span class="menu-header-text">Pages</span>
             </li>
-            <!-- Dashboards -->
-            <li class="menu-item">
-                <a href="{{ route('data.jurusan') }}" class="menu-link">
-                    <i class="menu-icon icon-base ti tabler-smart-home"></i>
+            <li class="menu-item {{ request()->routeIs('jurusan.*') ? 'open' : '' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon icon-base ti tabler-building"></i>
                     <div>Jurusan</div>
                 </a>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->routeIs('jurusan.data') ? 'active' : '' }}">
+                        <a href="{{ route('jurusan.data') }}" class="menu-link">
+                            <div>Data Jurusan</div>
+                        </a>
+                    </li>
+                    {{-- <li class="menu-item {{ request()->routeIs('kawasan.create') ? 'active' : '' }}">
+                        <a href="{{ route('kawasan.create') }}" class="menu-link">
+                            <div>Kawasan Baru</div>
+                        </a>
+                    </li> --}}
+                </ul>
             </li>
         </ul>
     </aside>

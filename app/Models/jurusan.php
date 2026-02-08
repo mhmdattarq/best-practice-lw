@@ -9,4 +9,11 @@ class jurusan extends Model
 {
     /** @use HasFactory<\Database\Factories\JurusanFactory> */
     use HasFactory;
+    protected $guarded = [];
+    protected $table = 'jurusans';
+
+    protected $fillable = [
+        'nama_jurusan',
+        'deskripsi',
+    ];
 }
