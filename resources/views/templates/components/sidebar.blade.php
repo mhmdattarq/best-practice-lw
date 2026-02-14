@@ -54,11 +54,12 @@ new class extends Component {
                             <div>Data Jurusan</div>
                         </a>
                     </li>
-                    {{-- <li class="menu-item {{ request()->routeIs('kawasan.create') ? 'active' : '' }}">
-                        <a href="{{ route('kawasan.create') }}" class="menu-link">
-                            <div>Kawasan Baru</div>
+                    <li class="menu-item {{ request()->routeIs('jurusan.create') ? 'active' : '' }}">
+                        <a href="{{ route('jurusan.create') }}" class="menu-link">
+                            <div>Tambah Jurusan</div>
                         </a>
-                    </li> --}}
+                    </li>
+
                 </ul>
             </li>
         </ul>

@@ -56,7 +56,7 @@
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item text-warning" href="#"><i class="icon-base ti tabler-pencil me-1"></i>Edit</a>
-                                    <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#modalConfirm">
+                                    <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#modalConfirm" wire:click="hookModalConfirm(${data.id},'${data.nama_jurusan}')">
                                         <i class="icon-base ti tabler-trash me-1"></i>Hapus
                                     </a>
                                 </div>

@@ -4,7 +4,7 @@
         <h5 class="card-header d-flex justify-content-between align-items-center">
             Data Jurusan
         </h5>
-        <div class="card-body">
+        <div class="card-body" wire:ignore>
             <table id="myTable" class="datatables-basic table">
                 <thead>
                     <tr>
@@ -32,5 +32,7 @@
             </table>
         </div>
     </div>
+    <livewire:modal_confirm />
+    @livewire('jurusan.delete_jurusan')
     @include('mods.jurusan.atc.data_jurusan_atc')
 </div>
