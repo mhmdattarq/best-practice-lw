@@ -4,6 +4,7 @@ namespace App\Livewire\Jurusan;
 
 use App\Repositories\JurusanRepo;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class DataJurusan extends Component
 {
@@ -20,6 +21,21 @@ class DataJurusan extends Component
 
         // ini bagian yang ngehook ke modal confirm blade tadi
         $this->dispatch('modal-confirm-setDeleteId', $dtHook);
+    }
+
+    #[On('DataJurusan_fallbackDelete')]
+    public function fallbackDelete($status)
+    {
+        if ($status == 'success') {
+            $msg = "Data jurusan berhasil Di hapus.";
+        } else {
+            $msg = "Data jurusan gagal Di hapus.";
+        }
+        $this->dispatch(
+            'alert-show',
+            type: $status,
+            msg: $msg,
+        );
     }
 
     public function render()

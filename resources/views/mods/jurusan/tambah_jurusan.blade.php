@@ -5,6 +5,7 @@
                 <h5 class="mb-0">Tambah Data Jurusan</h5>
             </div>
             <div class="card-body">
+                <livewire:alert />
                 <form wire:submit="formSubmit">
                     <div class="row mb-6">
                         <label class="col-sm-2 col-form-label" for="nama_jurusan">Nama Jurusan</label>

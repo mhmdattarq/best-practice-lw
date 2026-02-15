@@ -5,6 +5,7 @@
             Data Jurusan
         </h5>
         <div class="card-body" wire:ignore>
+            <livewire:alert />
             <table id="myTable" class="datatables-basic table">
                 <thead>
                     <tr>

@@ -9,20 +9,15 @@ use Livewire\Component;
 class DeleteJurusan extends Component
 {
     #[On('DeleteJurusan-delete')]
-
     public function delete($data)
     {
         $proses = JurusanRepo::delete($data['id']);
         if ($proses) {
             $this->dispatch('reloadDT', data: 'dtTable');
             $this->dispatch('closeModal', id: 'modalConfirm');
-            $this->dispatch('alert', data: ['type' => 'success',  'message' => 'Data baru berhasil ditambahkan.']);
+            $this->dispatch('DataJurusan_fallbackDelete', status: 'success');
         } else {
-            $this->dispatch(
-                'alert-show',
-                type: "danger",
-                msg: "Gagal menghapus data, silahkan hubungi admin.",
-            );
+            $this->dispatch('DataJurusan_fallbackDelete', status: 'danger');
         }
     }
 
