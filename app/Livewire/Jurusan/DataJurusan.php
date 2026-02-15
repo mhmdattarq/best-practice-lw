@@ -38,6 +38,21 @@ class DataJurusan extends Component
         );
     }
 
+    #[On('DataJurusan_fallbackUpdate')]
+    public function fallbackUpdate($status)
+    {
+        if ($status == 'success') {
+            $msg = "Data jurusan berhasil Di Update.";
+        } else {
+            $msg = "Data jurusan gagal Di Update.";
+        }
+        $this->dispatch(
+            'alert-show',
+            type: $status,
+            msg: $msg,
+        );
+    }
+
     public function render()
     {
         return view('mods.jurusan.data_jurusan');

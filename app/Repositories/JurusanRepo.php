@@ -27,6 +27,11 @@ class JurusanRepo
             return false;
         }
     }
+    public static function update($id, $data)
+    {
+        return Jurusan::where('id', $id)->update($data);
+    }
+
     public static function getAllDt()
     {
         return Jurusan::all();
