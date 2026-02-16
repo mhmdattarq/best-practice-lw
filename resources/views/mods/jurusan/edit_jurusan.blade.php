@@ -3,6 +3,9 @@
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
                 <h5 class="mb-0">Tambah Data Jurusan</h5>
+                <div class="col-sm-10 text-end">
+                    <a href="{{ route('jurusan.data') }}" class="btn btn-danger">Kembali</a>
+                </div>
             </div>
             <div class="card-body">
                 <livewire:alert />
