@@ -37,11 +37,18 @@ class EditJurusan extends Component
         $process = JurusanRepo::update($this->jurusanId, $this->form);
 
         if ($process) {
-            return redirect()->route('jurusan.data');
-            $this->dispatch('DataJurusan_fallbackUpdate', status: 'success');
+            $this->dispatch(
+                'alert-show',
+                type: "success",
+                msg: "Data jurusan " . $this->form['nama_jurusan'] . " berhasil edit.",
+            );
+            $this->reset('form');
         } else {
-            return redirect()->route('jurusan.data');
-            $this->dispatch('DataJurusan_fallbackUpdate', status: 'danger');
+            $this->dispatch(
+                'alert-show',
+                type: "danger",
+                msg: "Proses penambahan data baru gagal, periksa kembali",
+            );
         }
     }
 
